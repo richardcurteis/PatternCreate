@@ -1,4 +1,29 @@
 import string
+import argparse
+
+def main():
+    args = input_args()
+    if args.query:
+        print(f"[!] Pattern found at: {find_offset(args.length, args.query)} bytes")
+    else:
+        print(create_pattern(args.length))
+
+def input_args():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('-l',
+                        '--length',
+                        type=int,
+                        required=True,
+                        help='Length of pattern to create')
+
+    parser.add_argument('-q',
+                        '--query',
+                        type=string,
+                        required=False,
+                        help='Optional: Query string from EIP to locate in pattern')
+    
+    return parser.parse_args()
 
 def create_pattern(length):
     index_up, index_down, int_index = 0, 0, 0
@@ -29,3 +54,6 @@ def find_offset(length, query):
     
 def extend_pattern(pattern, upper, lower, integer):
     return pattern + upper.capitalize() + lower + str(integer)
+
+if __name__ = "__main__":
+    main()
