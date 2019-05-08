@@ -55,5 +55,5 @@ def find_offset(length, query):
 def extend_pattern(pattern, upper, lower, integer):
     return pattern + upper.capitalize() + lower + str(integer)
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     main()
