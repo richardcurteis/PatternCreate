@@ -19,7 +19,7 @@ def input_args():
 
     parser.add_argument('-q',
                         '--query',
-                        type=string,
+                        type=str,
                         required=False,
                         help='Optional: Query string from EIP to locate in pattern')
     
