@@ -29,7 +29,7 @@ def create_pattern(length):
     index_up, index_down, int_index = 0, 0, 0
     int_list = list(range(0, 10))
     int_limit = len(int_list)-1 # 9
-    char_list = string.ascii_lowercase
+    char_list = string.ascii_lowercase # a-z
     char_limit = len(char_list)-1 # 25
     pattern = ''
     while len(pattern) < length:
